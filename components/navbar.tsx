@@ -1,34 +1,97 @@
+"use client";
 import {
   Navbar as NextUINavbar,
-  NavbarContent, NavbarBrand
+  NavbarContent,
+  NavbarBrand,
 } from "@nextui-org/navbar";
-
 
 import NextLink from "next/link";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-
-import { Logo } from "@/components/icons";
-
+import { SearchIcon } from "./icons";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownSection,
+  DropdownItem,
+  Link,
+  Image,
+  Input,
+} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import {
+  ChevronDown,
+  Heart,
+  KeyboardMusic,
+  Package,
+  ShoppingCartIcon,
+  UserCircle2Icon,
+} from "lucide-react";
 export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
-          </NextLink>
-        </NavbarBrand>
+      <NavbarBrand className="w-full">
+        <h1 className="tracking-tight flex items-center font-semibold from-[#FF1CF7] to-[#b249f8] text-xl leading-9 bg-clip-text text-transparent bg-gradient-to-b mr-3">
+          <KeyboardMusic className="mr-3" color="#b249f8" /> BitBiltz
+        </h1>
+      </NavbarBrand>
+      <Input
+        classNames={{
+          base: "max-w-full h-10",
+          mainWrapper: "h-full",
+          input: "text-small",
+          inputWrapper:
+            "h-full w-full hidden md:block font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 rounded-md",
+        }}
+        placeholder="Type to search..."
+        size="md"
+        startContent={<SearchIcon size={18} />}
+        type="search"
+      />
+      <NavbarContent className="gap-0" justify="end">
+        <Button variant="light" className="font-semibold rounded-md">
+          <UserCircle2Icon size={22} strokeWidth={1.5} />
+          Login
+        </Button>
+        <Button
+          href="#"
+          as={Link}
+          variant="light"
+          className="rounded-md font-semibold"
+        >
+          <ShoppingCartIcon size={22} strokeWidth={1.5} />
+          Cart
+        </Button>
+        <ThemeSwitch className="ml-2" />
       </NavbarContent>
-
-      <NavbarContent
-        className=""
-        justify="end"
-      >
-       <ThemeSwitch/>
-      </NavbarContent>
-
     </NextUINavbar>
   );
 };
+{
+  /* <Dropdown>
+<DropdownTrigger>
+
+</DropdownTrigger>
+<DropdownMenu aria-label="Static Actions">
+  <DropdownItem
+    key="new"
+    startContent={<UserCircle2Icon size={22} strokeWidth={1.5} />}
+  >
+    My Profile
+  </DropdownItem>
+  <DropdownItem
+    key="copy"
+    startContent={<Package size={22} strokeWidth={1.5} />}
+  >
+    Order
+  </DropdownItem>
+  <DropdownItem
+    key="edit"
+    startContent={<Heart size={20} strokeWidth={1.7} />}
+  >
+    Wishlist
+  </DropdownItem>
+</DropdownMenu>
+</Dropdown> */
+}
