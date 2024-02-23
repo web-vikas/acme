@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -8,49 +9,89 @@ import NextLink from "next/link";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon } from "./icons";
-// import { Select, SelectItem, SelectSection } from "@nextui-org/select";
-
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownSection,
+  DropdownItem,
+  Link,
+  Image,
+  Input,
+} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import {
+  ChevronDown,
+  Heart,
+  KeyboardMusic,
+  Package,
+  ShoppingCartIcon,
+  UserCircle2Icon,
+} from "lucide-react";
 export const Navbar = () => {
   return (
-     <NextUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="sm:flex sm:justify-between" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit sm:max-w-none">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <img src="logo.svg" alt="" className="w-64" />
-          </NextLink>
-          <div className="hidden sm:flex items-center gap-3 border rounded-lg w-96 ml-8 text-2xl h-10 bg-sky-50">
-            <SearchIcon className="ml-2 w-5" />
-            <input
-              type="text"
-              placeholder="Search for Product, Brands and More"
-              className="w-full text-lg outline-none bg-sky-50"
-            />
-          </div>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="sm:flex sm:items-center sm:gap-1" justify="end">
-        <div className="flex sm:border-1 sm:w-28 sm:h-10 sm:rounded-lg">
-          <img src="profile.svg" alt="" className="w-6 ml-2" />
-          <select name="Vicky" id="" className="border-none outline-none">
-            <option value="">Profile</option>
-            <option value="">Profile</option>
-            <option value="">Profile</option>
-          </select>
-        </div>
-        <div className="flex gap-1 ml-2 cursor-pointer">
-          <img src="cart.svg" alt="" />
-          <NextLink href="#">Cart</NextLink>
-        </div>
-        <div className="flex gap-1 ml-2 cursor-pointer">
-          <img src="Store.svg" alt="" />
-          <NextLink href="#">Become a Seller</NextLink>
-        </div>
-        {/* <ThemeSwitch /> */}
-        <div className="flex ml-2 cursor-pointer">
-          <img src="verticalDots.svg" alt="" />
-        </div>
+    <NextUINavbar maxWidth="xl" position="sticky">
+      <NavbarBrand className="w-full">
+        <h1 className="tracking-tight flex items-center font-semibold from-[#FF1CF7] to-[#b249f8] text-xl leading-9 bg-clip-text text-transparent bg-gradient-to-b mr-3">
+          <KeyboardMusic className="mr-3" color="#b249f8" /> BitBiltz
+        </h1>
+      </NavbarBrand>
+      <Input
+        classNames={{
+          base: "max-w-full h-10",
+          mainWrapper: "h-full",
+          input: "text-small",
+          inputWrapper:
+            "h-full w-full hidden md:block font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 rounded-md",
+        }}
+        placeholder="Type to search..."
+        size="md"
+        startContent={<SearchIcon size={18} />}
+        type="search"
+      />
+      <NavbarContent className="gap-0" justify="end">
+        <Button variant="light" className="font-semibold rounded-md">
+          <UserCircle2Icon size={22} strokeWidth={1.5} />
+          Login
+        </Button>
+        <Button
+          href="#"
+          as={Link}
+          variant="light"
+          className="rounded-md font-semibold"
+        >
+          <ShoppingCartIcon size={22} strokeWidth={1.5} />
+          Cart
+        </Button>
+        <ThemeSwitch className="ml-2" />
       </NavbarContent>
     </NextUINavbar>
   );
 };
+{
+  /* <Dropdown>
+<DropdownTrigger>
+
+</DropdownTrigger>
+<DropdownMenu aria-label="Static Actions">
+  <DropdownItem
+    key="new"
+    startContent={<UserCircle2Icon size={22} strokeWidth={1.5} />}
+  >
+    My Profile
+  </DropdownItem>
+  <DropdownItem
+    key="copy"
+    startContent={<Package size={22} strokeWidth={1.5} />}
+  >
+    Order
+  </DropdownItem>
+  <DropdownItem
+    key="edit"
+    startContent={<Heart size={20} strokeWidth={1.7} />}
+  >
+    Wishlist
+  </DropdownItem>
+</DropdownMenu>
+</Dropdown> */
+}
