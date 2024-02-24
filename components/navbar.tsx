@@ -9,12 +9,7 @@ import NextLink from "next/link";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon } from "./icons";
-import {
-  Link,
-  Image,
-  Input,
-  Button
-} from "@nextui-org/react";
+import { Link, Image, Input, Button } from "@nextui-org/react";
 // import { } from "@nextui-org/react";
 import {
   ChevronDown,
@@ -27,7 +22,7 @@ import {
 export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
-      <NavbarBrand className="w-full">
+      <NavbarBrand className="w-full" as={Link} href={"/"}>
         <h1 className="tracking-tight flex items-center font-semibold from-[#FF1CF7] to-[#b249f8] text-xl leading-9 bg-clip-text text-transparent bg-gradient-to-b mr-3">
           <KeyboardMusic className="mr-3" color="#b249f8" /> BitBiltz
         </h1>
@@ -46,7 +41,12 @@ export const Navbar = () => {
         type="search"
       />
       <NavbarContent className="gap-0" justify="end">
-        <Button variant="light" className="font-semibold rounded-md">
+        <Button
+          variant="light"
+          className="font-semibold rounded-md"
+          as={Link}
+          href="/auth/login"
+        >
           <UserCircle2Icon size={22} strokeWidth={1.5} />
           Login
         </Button>
