@@ -1,10 +1,19 @@
+"use client";
 import React from "react";
 import { Link, Image } from "@nextui-org/react";
 
 export const Supermart = () => {
   return (
-    <div className="sm:p-5 p-0 overflow-x-auto">
-      <div className="bg-gray-50 flex gap-9 flex-row w-[900px] sm:w-full  z-20 justify-around items-center p-5">
+    <div className=" overflow-x-auto ">
+      <style>
+        {`
+          /* Hide WebKit scrollbars */
+          ::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
+      <div className="bg-gray-50 flex gap-9 flex-row w-[1000px] sm:w-full  z-20 justify-around items-center sm:p-4">
         <Link className="text-black font-semibold">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
@@ -14,7 +23,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Grocery</span>
+            <span className="mt-1 text-xs sm:text-sm">Grocery</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -26,7 +35,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Mobiles</span>
+            <span className="mt-1 text-xs sm:text-sm">Mobiles</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -38,7 +47,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Fashion</span>
+            <span className="mt-1 text-xs sm:text-sm">Fashion</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -50,7 +59,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Electronics</span>
+            <span className="mt-1 text-xs sm:text-sm">Electronics</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -62,7 +71,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Home & Furniture</span>
+            <span className="mt-1 text-xs sm:text-sm">Home & Furniture</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -74,7 +83,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Appliances</span>
+            <span className="mt-1 text-xs sm:text-sm">Appliances</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -82,7 +91,7 @@ export const Supermart = () => {
             <div className="w-16 h-16">
               <Image src="travel.webp" alt="Travel" className="w-full h-full" />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Travel</span>
+            <span className="mt-1 text-xs sm:text-sm">Travel</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -94,7 +103,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base ">Beauty, Toys & More</span>
+            <span className="mt-1 text-xs sm:text-sm ">Beauty, Toys & More</span>
           </div>
         </Link>
         <Link className="text-black font-semibold">
@@ -106,7 +115,7 @@ export const Supermart = () => {
                 className="w-full h-full"
               />
             </div>
-            <span className="mt-1 text-sm sm:text-base">Two Wheelers</span>
+            <span className="mt-1 text-xs sm:text-sm">Two Wheelers</span>
           </div>
         </Link>
       </div>

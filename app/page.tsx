@@ -1,9 +1,14 @@
-import { title } from "@/components/primitives";
-
+import FullScreenSwiper from "@/components/full-screen-swiper";
+import { Supermart } from "@/components/supermart";
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <h1 className={title({ color: "violet" })}>Hello&nbsp;</h1>
+    <section className="">
+      <div className=" mb-5">
+        <Supermart/>
+      </div>
+      <div className="border-3">
+        <FullScreenSwiper />
+      </div>
     </section>
   );
 }
