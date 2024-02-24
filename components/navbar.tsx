@@ -10,16 +10,12 @@ import NextLink from "next/link";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon } from "./icons";
 import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownSection,
-  DropdownItem,
   Link,
   Image,
   Input,
+  Button
 } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
+// import { } from "@nextui-org/react";
 import {
   ChevronDown,
   Heart,
@@ -68,30 +64,3 @@ export const Navbar = () => {
     </NextUINavbar>
   );
 };
-{
-  /* <Dropdown>
-<DropdownTrigger>
-
-</DropdownTrigger>
-<DropdownMenu aria-label="Static Actions">
-  <DropdownItem
-    key="new"
-    startContent={<UserCircle2Icon size={22} strokeWidth={1.5} />}
-  >
-    My Profile
-  </DropdownItem>
-  <DropdownItem
-    key="copy"
-    startContent={<Package size={22} strokeWidth={1.5} />}
-  >
-    Order
-  </DropdownItem>
-  <DropdownItem
-    key="edit"
-    startContent={<Heart size={20} strokeWidth={1.7} />}
-  >
-    Wishlist
-  </DropdownItem>
-</DropdownMenu>
-</Dropdown> */
-}
