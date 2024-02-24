@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  padding: 15px 12px;
+  background-color: azure;
+  color: #000;
+}
+.swiper-button-prev::after {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.swiper-button-next::after {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+} */
