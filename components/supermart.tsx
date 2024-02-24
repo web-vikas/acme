@@ -13,8 +13,8 @@ export const Supermart = () => {
           }
         `}
       </style>
-      <div className="bg-gray-50 flex gap-9 flex-row w-[1000px] sm:w-full  z-20 justify-around items-center sm:p-4">
-        <Link className="text-black font-semibold">
+      <div className=" flex gap-9 flex-row w-[1000px] sm:w-full  z-20 justify-around items-center sm:p-4">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -26,7 +26,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Grocery</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -38,7 +38,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Mobiles</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -50,7 +50,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Fashion</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -62,7 +62,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Electronics</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -74,7 +74,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Home & Furniture</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -86,7 +86,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Appliances</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image src="travel.webp" alt="Travel" className="w-full h-full" />
@@ -94,7 +94,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm">Travel</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
@@ -106,7 +106,7 @@ export const Supermart = () => {
             <span className="mt-1 text-xs sm:text-sm ">Beauty, Toys & More</span>
           </div>
         </Link>
-        <Link className="text-black font-semibold">
+        <Link className=" font-semibold" color="foreground">
           <div className="flex flex-col items-center">
             <div className="w-16 h-16">
               <Image
