@@ -3,12 +3,8 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import { Supermart } from "@/components/supermart";
-
-
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -38,18 +34,8 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-2 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <>
-                <span className="text-default-600">Crated by :&nbsp;</span>
-                <p className="text-primary"> Vikas Patel & Team</p>
-              </>
-            </footer>
-          </div>
+          {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
