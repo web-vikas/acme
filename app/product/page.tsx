@@ -54,15 +54,15 @@ export default function div() {
               ))}
             </div> */}
             <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              Redmi Buds 4 Active - Air White, 12mm Drivers Premium Sound
-              Quality, Up to 30 Hours Battery Life, Google Fast Pair, IPX4,
-              Bluetooth 5.3, ENC, Up to 60ms Low Latency Mode, App Support
+              Redmi Buds 4 Active - Air White 12mm Drivers Premium Sound
+              Quality Up to 30 Hours Battery Life Google Fast Pair IPX4
+              Bluetooth 5.3 ENC Up to 60ms Low Latency Mode App Support
             </h1>
             <Rating name="size-large" defaultValue={4} size="large" />
             <div className="flex mb-4">
               <div className="mr-4">
                 <p className="font-bold text-gray-700 dark:text-gray-300 text-2xl">
-                  Price: 1500
+                  Price 1500
                 </p>
               </div>
               <div>
@@ -84,7 +84,7 @@ export default function div() {
             </div>
             <div className="mb-4">
               <p className="font-bold text-gray-700 dark:text-gray-300">
-                Select Size:
+                Select Size
               </p>
               <div className="flex items-center mt-2">
                 <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">
@@ -106,15 +106,15 @@ export default function div() {
             </div>
             <div>
               <p className="font-bold text-gray-700 dark:text-gray-300">
-                Product Description:
+                Product Description
               </p>
               <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                Introducing Redmi Buds 4 Active, the ultimate companion for
+                Introducing Redmi Buds 4 Active the ultimate companion for
                 immersive audio enthusiasts. With its powerful 12mm Bass Pro
-                drivers, these earbuds deliver an unparalleled audio experience,
-                providing deep, rich bass and crisp, clear highs. Whether you're
+                drivers these earbuds deliver an unparalleled audio experience
+                providing deep rich bass and crisp clear highs. Whether you re
                 enjoying your favourite music or engaging in intense gaming
-                sessions, Redmi Buds 4 Active ensures you feel the rhythm like
+                sessions Redmi Buds 4 Active ensures you feel the rhythm like
                 never before.
               </p>
             </div>
