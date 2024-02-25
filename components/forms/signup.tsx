@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const SignUpForm = () => {
   const [step, setStep] = useState(1);
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(true);
 
   return (
     <div className="">
