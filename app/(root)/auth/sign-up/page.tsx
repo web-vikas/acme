@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 import SignUpForm from "@/components/forms/signup";
 
-const LogIn = () => {
+const SignUp = () => {
   return (
     <div className="mx-auto max-w-screen-sm">
       <Card className="p-4">
@@ -27,4 +27,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;
