@@ -43,5 +43,23 @@ const Auth = {
     }
     return handleResponse(response);
   },
+  LoginCustomer: async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    let response = null;
+    try {
+      response = await API.post("/auth/login", {
+        email,
+        password,
+      });
+    } catch (e) {
+      response = e;
+    }
+    return handleResponse(response);
+  },
 };
 export default Auth;
