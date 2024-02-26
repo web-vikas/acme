@@ -9,24 +9,55 @@ import { HouseIcon } from "@/components/icons/breadcrumb/house-icon";
 import { UsersIcon } from "@/components/icons/breadcrumb/users-icon";
 import { SettingsIcon } from "@/components/icons/sidebar/settings-icon";
 import { AddUser } from "./add-user";
-import { TableWrapper } from "./table/table";
-
+import { useEffect, useState } from "react";
+import Admin from "@/api/admin";
+import NTable from "@/components/table";
+import moment from "moment";
+const columns = [
+  { name: "NAME", uid: "name" },
+  { name: "EMAIL", uid: "email" },
+  { name: "ROLE", uid: "role" },
+  { name: "STATUS", uid: "status" },
+  { name: "CREATED AT", uid: "createdAt" },
+  { name: "ACTIONS", uid: "actions" },
+];
 export const Body = () => {
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const res = await Admin.getAccounts();
+    console.log(res);
+    setTableData(res.data);
+    console.log(tableData, res.data);
+  };
+
+  // Custom render function for the "actions" column
+  const customRenderTable = (row: any, uid: string) => {
+    if (uid === "createdAt") {
+      return <div>{moment(row[uid]).format("DD-MM-YYYY")}</div>;
+    }
+    return row[uid];
+  };
+
   return (
     <div className="my-14 lg:px-6 max-w-[95rem] mx-auto w-full flex flex-col gap-4">
       <ul className="flex">
         <li className="flex gap-2">
           <HouseIcon />
-          <Link href={"/"}>
+          <Link href={"/admin"}>
             <span>Home</span>
           </Link>
-          <span> / </span>{" "}
+          <span> / </span>
         </li>
 
         <li className="flex gap-2">
           <UsersIcon />
           <span>Users</span>
-          <span> / </span>{" "}
+          <span> / </span>
         </li>
         <li className="flex gap-2">
           <span>List</span>
@@ -43,10 +74,6 @@ export const Body = () => {
             }}
             placeholder="Search users"
           />
-          <SettingsIcon />
-          <TrashIcon />
-          <InfoIcon />
-          <DotsIcon />
         </div>
         <div className="flex flex-row gap-3.5 flex-wrap">
           <AddUser />
@@ -56,7 +83,11 @@ export const Body = () => {
         </div>
       </div>
       <div className="max-w-[95rem] mx-auto w-full">
-        <TableWrapper />
+        <NTable
+          columns={columns}
+          tableData={tableData}
+          renderTable={customRenderTable}
+        />
       </div>
     </div>
   );
