@@ -8,27 +8,35 @@ import {
   RadioGroup,
 } from "@nextui-org/react";
 import { AddImages } from "./new-image";
+import { productImages } from "@/types";
 // import Image from "next/image";
 
-const Images = () => {
+const Images = ({ _this }: any) => {
   return (
     <Card className="w-full px-2">
       <CardHeader className="flex justify-between">
         <h1 className="text-lg font-bold">Images</h1>
-        <AddImages />
+        <AddImages _this={_this} />
       </CardHeader>
       <CardBody>
         <div>
           <Image
-            src="https://placehold.co/800x400/png"
+            src={
+              _this.images[_this.currentImage] ||
+              "https://placehold.co/800x400/png"
+            }
             alt="front"
             className="w-full"
           />
         </div>
         <div className="flex gap-4 mt-4">
-          <RadioGroup orientation="horizontal" defaultValue="london">
+          <RadioGroup
+            orientation="horizontal"
+            defaultValue="london"
+            onValueChange={(value) => _this.setCurrentImage(value)}
+          >
             <Radio
-              value="buenos-aires"
+              value="front"
               classNames={{
                 label: "radio-label rounded-md",
                 wrapper: "hidden",
@@ -41,7 +49,7 @@ const Images = () => {
               />
             </Radio>
             <Radio
-              value="sydney"
+              value="left"
               classNames={{
                 label: "radio-label rounded-md",
                 wrapper: "hidden",
@@ -54,7 +62,7 @@ const Images = () => {
               />
             </Radio>
             <Radio
-              value="london"
+              value="right"
               classNames={{
                 label: "radio-label rounded-md",
                 wrapper: "hidden",
@@ -67,7 +75,20 @@ const Images = () => {
               />
             </Radio>
             <Radio
-              value="tokyo"
+              value="back"
+              classNames={{
+                label: "radio-label rounded-md",
+                wrapper: "hidden",
+              }}
+            >
+              <Image
+                src="https://placehold.co/60x60/png"
+                alt="front"
+                className="w-full rounded-md"
+              />
+            </Radio>
+            <Radio
+              value="additional"
               classNames={{
                 label: "radio-label rounded-md",
                 wrapper: "hidden",

@@ -1,10 +1,10 @@
 "use client";
+import { countries } from "@/helper/data";
 import {
   Button,
   Card,
   CardBody,
   CardHeader,
-  Code,
   Input,
   Modal,
   ModalBody,
@@ -23,12 +23,12 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 
-const ProductInfo = () => {
+const ProductInfo = ({ _this }: any) => {
   return (
     <Card className="h-full">
       <CardHeader className="flex justify-between pb-0">
         <h1 className="text-lg font-bold">Product Info</h1>
-        <AddProductInfo />
+        <AddProductInfo _this={_this} />
       </CardHeader>
       <CardBody>
         <Table
@@ -46,23 +46,25 @@ const ProductInfo = () => {
           <TableBody>
             <TableRow key="1">
               <TableCell> SKU ID</TableCell>
-              <TableCell>123</TableCell>
+              <TableCell>{_this.productInfo.skuId}</TableCell>
             </TableRow>
             <TableRow key="2">
               <TableCell>Listing Status</TableCell>
-              <TableCell>Active</TableCell>
+              <TableCell className="capitalize">
+                {_this.productInfo.listingStatus}
+              </TableCell>
             </TableRow>
             <TableRow key="3">
               <TableCell>Price - MRP</TableCell>
-              <TableCell>111</TableCell>
+              <TableCell>{_this.productInfo.priceMRP}</TableCell>
             </TableRow>
             <TableRow key="4">
               <TableCell>Price - Selling</TableCell>
-              <TableCell>10</TableCell>
+              <TableCell>{_this.productInfo.priceSelling}</TableCell>
             </TableRow>
             <TableRow key="5">
               <TableCell>Stock</TableCell>
-              <TableCell>10</TableCell>
+              <TableCell>{_this.productInfo.stock}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -73,7 +75,7 @@ const ProductInfo = () => {
 
 export default ProductInfo;
 
-export const AddProductInfo = () => {
+export const AddProductInfo = ({ _this }: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -97,6 +99,7 @@ export const AddProductInfo = () => {
                     type="text"
                     label="SKU ID"
                     isRequired
+                    name="skuId"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
@@ -105,6 +108,8 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.skuId}
+                    onChange={_this.handleProductInfoChange}
                   />
 
                   <Select
@@ -116,12 +121,15 @@ export const AddProductInfo = () => {
                       label: "font-semibold text-md",
                     }}
                     className="p-2"
+                    value={_this.productInfo.listingStatus}
+                    onChange={_this.handleProductInfoChange}
+                    name="listingStatus"
                   >
-                    <SelectItem key="active">Active</SelectItem>
-                    <SelectItem key="passive">Passive</SelectItem>
+                    <SelectItem key="show">Show</SelectItem>
+                    <SelectItem key="hide">Hide</SelectItem>
                   </Select>
                   <Input
-                    type="text"
+                    type="number"
                     label="Price ( M.R.P)"
                     isRequired
                     classNames={{
@@ -132,9 +140,12 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.priceMRP}
+                    onChange={_this.handleProductInfoChange}
+                    name="priceMRP"
                   />
                   <Input
-                    type="text"
+                    type="number"
                     label="Price ( Selling )"
                     isRequired
                     classNames={{
@@ -145,9 +156,12 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.priceSelling}
+                    onChange={_this.handleProductInfoChange}
+                    name="priceSelling"
                   />
                   <Input
-                    type="text"
+                    type="number"
                     label="Stock"
                     isRequired
                     classNames={{
@@ -158,9 +172,12 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.stock}
+                    onChange={_this.handleProductInfoChange}
+                    name="stock"
                   />
                   <Input
-                    type="text"
+                    type="number"
                     label="Delivery Charge"
                     isRequired
                     classNames={{
@@ -171,6 +188,9 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.deliveryCharge}
+                    onChange={_this.handleProductInfoChange}
+                    name="deliveryCharge"
                   />
                   <Select
                     label="Country"
@@ -181,9 +201,15 @@ export const AddProductInfo = () => {
                     }}
                     placeholder="Country"
                     className="p-2"
+                    value={_this.productInfo.originCountry}
+                    onChange={_this.handleProductInfoChange}
+                    name="originCountry"
                   >
-                    <SelectItem key="active">India</SelectItem>
-                    <SelectItem key="passive">Pakistan</SelectItem>
+                    {countries.map((country) => (
+                      <SelectItem key={country.name} value={country.name}>
+                        {country.name}
+                      </SelectItem>
+                    ))}
                   </Select>
                   <Input
                     type="text"
@@ -197,14 +223,14 @@ export const AddProductInfo = () => {
                     labelPlacement="outside"
                     placeholder=" "
                     className="p-2"
+                    value={_this.productInfo.manufacturingDetails}
+                    onChange={_this.handleProductInfoChange}
+                    name="manufacturingDetails"
                   />
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="danger" variant="flat" onClick={onClose}>
-                    Close
-                  </Button>
                   <Button color="primary" onPress={onClose}>
-                    ADD
+                    Update
                   </Button>
                 </ModalFooter>
               </>

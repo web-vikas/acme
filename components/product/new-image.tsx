@@ -11,13 +11,13 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 
-export const AddImages = () => {
+export const AddImages = ({ _this }: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div>
       <>
-        <Button onPress={onOpen} color="primary" variant="light" >
+        <Button onPress={onOpen} color="primary" variant="light">
           Edit
         </Button>
         <Modal
@@ -34,10 +34,12 @@ export const AddImages = () => {
                 </ModalHeader>
                 <ModalBody className="grid md:grid-cols-2 gap-3">
                   <Input
-                    type="email"
+                    type="text"
                     label="Front"
-                    name="email"
+                    value={_this.images.front}
                     isRequired
+                    onChange={_this.handleImageChange}
+                    name="front"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
@@ -48,9 +50,11 @@ export const AddImages = () => {
                     className="p-2"
                   />
                   <Input
-                    type="email"
+                    type="text"
                     label="Left"
-                    name="email"
+                    value={_this.images.left}
+                    onChange={_this.handleImageChange}
+                    name="left"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
@@ -61,9 +65,11 @@ export const AddImages = () => {
                     className="p-2"
                   />
                   <Input
-                    type="email"
+                    type="text"
                     label="Right"
-                    name="email"
+                    value={_this.images.right}
+                    onChange={_this.handleImageChange}
+                    name="right"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
@@ -74,9 +80,11 @@ export const AddImages = () => {
                     className="p-2"
                   />
                   <Input
-                    type="email"
-                    label="Additional"
-                    name="email"
+                    type="text"
+                    label="Back"
+                    value={_this.images.back}
+                    onChange={_this.handleImageChange}
+                    name="back"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
@@ -87,9 +95,11 @@ export const AddImages = () => {
                     className="p-2"
                   />
                   <Input
-                    type="email"
+                    type="text"
                     label="Additional"
-                    name="Additional"
+                    value={_this.images.additional}
+                    onChange={_this.handleImageChange}
+                    name="additional"
                     classNames={{
                       inputWrapper: "rounded-md border",
                       label: "font-semibold text-md",
