@@ -25,9 +25,9 @@ import React from "react";
 
 const ProductInfo = () => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="flex justify-between pb-0">
-        <h1>Product Info</h1>
+        <h1 className="text-lg font-bold">Product Info</h1>
         <AddProductInfo />
       </CardHeader>
       <CardBody>
@@ -58,6 +58,10 @@ const ProductInfo = () => {
             </TableRow>
             <TableRow key="4">
               <TableCell>Price - Selling</TableCell>
+              <TableCell>10</TableCell>
+            </TableRow>
+            <TableRow key="5">
+              <TableCell>Stock</TableCell>
               <TableCell>10</TableCell>
             </TableRow>
           </TableBody>

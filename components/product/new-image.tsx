@@ -17,7 +17,7 @@ export const AddImages = () => {
   return (
     <div>
       <>
-        <Button onPress={onOpen} color="primary" variant="light" as="a">
+        <Button onPress={onOpen} color="primary" variant="light" >
           Edit
         </Button>
         <Modal
