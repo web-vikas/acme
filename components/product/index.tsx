@@ -6,14 +6,16 @@ import Additional from "./Additional";
 
 const NewProduct = () => {
   return (
-    <div className="flex gap-2 flex-col md:flex-row">
-      <Images />
-      <div className="flex flex-col w-full gap-2">
-        <ProductInfo />
-        <ProductDescription />
-        <Additional />
+    <>
+      <div className="flex gap-2 flex-col md:flex-row mb-3">
+        <Images />
+        <div className="flex flex-col w-full gap-2">
+          <ProductInfo />
+          <ProductDescription />
+        </div>
       </div>
-    </div>
+      <Additional />
+    </>
   );
 };
 
