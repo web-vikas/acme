@@ -22,7 +22,12 @@ interface Props {
 const NTable = ({ columns, tableData, renderTable = getKeyValue }: Props) => {
   return (
     <div className="w-full flex flex-col gap-4">
-      <Table aria-label="table" color="success" selectionMode="multiple" isStriped >
+      <Table
+        aria-label="table"
+        color="success"
+        selectionMode="multiple"
+        isStriped
+      >
         <TableHeader columns={columns}>
           {(column) => (
             <TableColumn
@@ -35,17 +40,18 @@ const NTable = ({ columns, tableData, renderTable = getKeyValue }: Props) => {
           )}
         </TableHeader>
         <TableBody emptyContent={"No rows to display."}>
-          {tableData.map((row, i) => (
-            <TableRow key={i}>
-              {columns.map((column) => (
-                <TableCell key={column.uid}>
-                  {renderTable
-                    ? renderTable(row, column.uid)
-                    : getKeyValue(row, column.uid)}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
+          {tableData &&
+            tableData.map((row, i) => (
+              <TableRow key={i}>
+                {columns.map((column) => (
+                  <TableCell key={column.uid}>
+                    {renderTable
+                      ? renderTable(row, column.uid)
+                      : getKeyValue(row, column.uid)}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </div>

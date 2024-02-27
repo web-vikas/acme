@@ -22,7 +22,23 @@ export const handleResponse = (response: any) => {
     toast.success(response?.data?.message);
     return response?.data;
   } else toast.error("Something went wrong. Please contact server admin.");
-  console.log(response);
-
   return false;
+};
+
+interface UserSession {
+  access_token?: string;
+}
+
+export const getToken = async (): Promise<string> => {
+  let session = localStorage.getItem("user");
+  session = session && JSON.parse(session);
+  let response = (session as UserSession)?.access_token || "";
+  return response;
+};
+
+export const isAuthenticated = async () => {
+  let session = localStorage.getItem("user");
+  session = session && JSON.parse(session);
+  let response = (session as UserSession)?.access_token || "";
+  return response ? true : false;
 };

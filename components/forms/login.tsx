@@ -1,8 +1,11 @@
 "use client";
 import Auth from "@/api/auth";
+import { handleResponse } from "@/helper/utils";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
+import axios from "axios";
 import { LockIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 interface LoginData {
@@ -11,6 +14,7 @@ interface LoginData {
 }
 
 const LogInForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState<LoginData>({
     email: "",
     password: "",
@@ -25,9 +29,11 @@ const LogInForm = () => {
   };
 
   const handelLogin = async () => {
-    const res = await Auth.LoginCustomer(formData);
+    let res = await axios.post("/api", formData);
+    res = handleResponse(res);
     if (res) {
-      console.log("Hello");
+      localStorage.setItem("user", JSON.stringify(res.data));
+      router.push("/admin");
     }
   };
 

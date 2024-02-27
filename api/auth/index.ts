@@ -56,6 +56,7 @@ const Auth = {
         email,
         password,
       });
+      localStorage.setItem("user", JSON.stringify(response.data.data));
     } catch (e) {
       response = e;
     }
