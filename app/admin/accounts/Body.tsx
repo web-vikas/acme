@@ -30,9 +30,7 @@ export const Body = () => {
 
   const fetchData = async () => {
     const res = await Admin.getAccounts();
-    console.log(res);
     setTableData(res.data);
-    console.log(tableData, res.data);
   };
 
   // Custom render function for the "actions" column
@@ -82,7 +80,7 @@ export const Body = () => {
           </Button>
         </div>
       </div>
-      <div className="max-w-[95rem] mx-auto w-full">
+      <div className="mx-auto w-full">
         <NTable
           columns={columns}
           tableData={tableData}

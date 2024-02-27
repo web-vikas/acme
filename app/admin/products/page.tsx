@@ -1,8 +1,12 @@
-import React from 'react'
+'use client'
+
+import { useState } from "react";
+import Body from "./Body";
 
 const Products = () => {
+  const [tableData, setTableData] = useState([]);
   return (
-    <div>Products</div>
+  <Body _this={{tableData}}/>
   )
 }
 
