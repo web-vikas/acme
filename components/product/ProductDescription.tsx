@@ -101,6 +101,21 @@ export const AddProductDescription = ({ _this }: any) => {
                 <ModalHeader className="flex flex-col gap-1">Info</ModalHeader>
                 <ModalBody>
                   <div className="grid md:grid-cols-2 gap-3">
+                    <Input
+                      type="text"
+                      label="Title"
+                      classNames={{
+                        inputWrapper: "rounded-md border",
+                        label: "font-semibold text-md",
+                      }}
+                      variant="bordered"
+                      labelPlacement="outside"
+                      placeholder="Title"
+                      className="p-2"
+                      name="title"
+                      value={_this.productDescription.title}
+                      onChange={_this.handleProductDescriptionChange}
+                    />
                     <Select
                       label="Type"
                       labelPlacement="outside"
