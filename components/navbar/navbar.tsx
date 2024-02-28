@@ -48,7 +48,7 @@ export const NavbarWrapper = ({ children }: Props) => {
           </NavbarContent>
         </NavbarContent>
       </Navbar>
-      {children}
+      <div className="m-3">{children}</div>
     </div>
   );
 };

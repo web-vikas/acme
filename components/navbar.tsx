@@ -51,6 +51,14 @@ export const Navbar = () => {
           Login
         </Button>
         <Button
+          variant="light"
+          className="font-semibold rounded-md"
+          as={Link}
+          href="/admin"
+        >
+          Admin
+        </Button>
+        <Button
           href="#"
           as={Link}
           variant="light"
