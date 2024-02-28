@@ -4,7 +4,7 @@ const Public = {
   GetProducts: async () => {
     let response = null;
     try {
-      response = await API.get("/products/get-products");
+      response = await API.get("/public/get-products");
     } catch (e) {
       response = e;
     }

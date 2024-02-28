@@ -12,31 +12,33 @@ import {
 } from "@nextui-org/react";
 import { ShoppingCartIcon } from "lucide-react";
 
-export const Cards = () => {
+export const Cards = ({ title, price, sellPrice, image }: any) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div>
       <Card className="pb-2">
         <CardHeader className="max-w-sm rounded overflow-hidden  ">
           <Image
             alt="Card background"
-            className="object-cover rounded-md py-2 bg-fuchsia-950"
-            src="/shoes-1.webp"
-            width={270}
+            className="object-cover rounded py-2  h-80 w-80 bg-cover bg-center bg-no-repeat	"
+            src={image || "/shoes-1.webp"}
+            loading="lazy"
           />
         </CardHeader>
         <CardBody className="flex flex-col justify-evenly">
-          <h2 className="text-md font-semibold">Nike Adapt BB 2.0</h2>
+          <h2 className="text-md font-semibold">{title}</h2>
 
           <h4 className="font-bold text-base">
-            $279.97
-            <span className="line-through text-xs text-gray-400">$350</span>
+            {price}
+            <span className="line-through text-xs text-gray-400">
+              {sellPrice}
+            </span>
             <span className="text-fuchsia-700">20% off</span>
           </h4>
         </CardBody>
-        <CardFooter>
-          <div className="flex items-center gap-2">
+        <CardFooter className="flex items-center justify-center">
+          <div className="flex gap-5">
             <Button
-              className="rounded-md bg-fuchsia-600 font-semibold"
+              className="rounded-md bg-fuchsia-600 font-semibold "
               variant="solid"
             >
               Buy now
@@ -47,7 +49,7 @@ export const Cards = () => {
               color="secondary"
               startContent={<ShoppingCartIcon size={22} strokeWidth={1.5} />}
             >
-              Add to bag
+              Add to Cart
             </Button>
           </div>
         </CardFooter>
