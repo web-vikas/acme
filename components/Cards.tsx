@@ -20,7 +20,7 @@ export const Cards = ({ title, price, sellPrice, image }: any) => {
           <Image
             alt="Card background"
             className="object-cover rounded py-2  h-80 w-80 bg-cover bg-center bg-no-repeat	"
-            src={image || "/shoes-1.webp"}
+            src={image || "/No-Image.png"}
             loading="lazy"
           />
         </CardHeader>
